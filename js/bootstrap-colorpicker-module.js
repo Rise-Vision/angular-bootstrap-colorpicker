@@ -267,20 +267,16 @@ angular.module('colorpicker.module', [])
               position = angular.isDefined(attrs.colorpickerPosition) ? attrs.colorpickerPosition : 'bottom',
               inline = angular.isDefined(attrs.colorpickerInline) ? attrs.colorpickerInline : false,
               fixedPosition = angular.isDefined(attrs.colorpickerFixedPosition) ? attrs.colorpickerFixedPosition : false,
-              target = angular.isDefined(attrs.colorpickerParent) ? elem.parent() : angular.element(document.body),
+              target = angular.isDefined(attrs.colorpickerParent) ? elem.parent() : angular.element('.backgroundSettings'),
               withInput = angular.isDefined(attrs.colorpickerWithInput) ? attrs.colorpickerWithInput : false,
               inputTemplate = withInput ? '<input type="text" name="colorpicker-input">' : '',
-              closeButton = !inline ? '<button type="button" class="close close-colorpicker">&times;</button>' : '',
               template =
-                  '<div class="colorpicker dropdown">' +
-                      '<div class="dropdown-menu">' +
+                  '<div class="colorpicker">' +
                       '<colorpicker-saturation><i></i></colorpicker-saturation>' +
                       '<colorpicker-hue><i></i></colorpicker-hue>' +
                       '<colorpicker-alpha><i></i></colorpicker-alpha>' +
                       '<colorpicker-preview></colorpicker-preview>' +
                       inputTemplate +
-                      closeButton +
-                      '</div>' +
                       '</div>',
               colorpickerTemplate = angular.element(template),
               pickerColor = Color,
